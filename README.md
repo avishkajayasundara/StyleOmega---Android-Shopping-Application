@@ -1,0 +1,1 @@
+"# StyleOmega---Android-Shopping-Application" 

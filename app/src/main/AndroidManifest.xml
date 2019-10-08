@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.styleomega">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+        android:usesCleartextTraffic="true"
+        android:name="com.orm.SugarApp"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:node="merge">
+        <activity android:name=".ui.MyOrders"></activity>
+        <activity android:name=".ui.CategorySearch" />
+        <activity android:name=".ui.SearchedProducts" />
+        <activity android:name=".ui.ContactPage" />
+        <activity android:name=".ui.CategoriesMenu" />
+        <activity android:name=".ui.ConfirmOrder" />
+        <activity android:name=".ui.ShoppingCart" />
+        <activity android:name=".ui.ProductDetailsActivity" />
+        <activity android:name=".ui.ProfileActivity" />
+        <activity android:name=".ui.HomeActivity" />
+        <activity android:name=".ui.AddNewProduct" />
+        <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".ui.LoginActivity" />
+        <activity android:name=".ui.AdminHome" />
+        <activity android:name=".ui.AdminLogin" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="DATABASE"
+            android:value="styleOmega.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="2" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.example.styleomega" />
+    </application>
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+</manifest>

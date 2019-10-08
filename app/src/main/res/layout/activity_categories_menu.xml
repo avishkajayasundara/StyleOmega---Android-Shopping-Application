@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AdminHome"
+    android:background="@android:color/black"
+    >
+
+
+    <LinearLayout
+android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cat_linear_category_layout1"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
+
+        <com.rey.material.widget.ImageView
+            android:layout_width="110dp"
+            android:layout_height="120dp"
+            android:id="@+id/cat_shirts_img"
+            android:src="@drawable/tshirts"
+
+            />
+
+
+        <com.rey.material.widget.ImageView
+            android:layout_width="130dp"
+            android:layout_height="170dp"
+            android:id="@+id/cat_female_dresses_img"
+            android:src="@drawable/female_dresses"
+            />
+        <com.rey.material.widget.ImageView
+            android:layout_width="130dp"
+            android:layout_height="170dp"
+            android:id="@+id/cat_sweather_img"
+            android:src="@drawable/sweather"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cat_linear_category_layout2"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/cat_linear_category_layout1"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="@android:color/white"          >
+
+        <com.rey.material.widget.ImageView
+            android:layout_width="130dp"
+            android:layout_height="170dp"
+            android:id="@+id/cat_glasses_img"
+            android:src="@drawable/glasses"
+            />
+
+        <com.rey.material.widget.ImageView
+            android:layout_width="110dp"
+            android:layout_height="150dp"
+            android:id="@+id/cat_purse_bag_img"
+            android:src="@drawable/purses_bags"
+            />
+
+        <com.rey.material.widget.ImageView
+            android:layout_width="110dp"
+            android:layout_height="150dp"
+            android:id="@+id/cat_shoes_img"
+            android:src="@drawable/shoess"
+            android:layout_marginStart="16dp"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cat_linear_category_layout3"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/cat_linear_category_layout2"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
+
+        <com.rey.material.widget.ImageView
+            android:layout_width="100dp"
+            android:layout_height="140dp"
+            android:id="@+id/cat_trousers_img"
+            android:src="@drawable/trousers"
+            />
+
+        <com.rey.material.widget.ImageView
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:id="@+id/cat_children_img"
+            android:src="@drawable/children"
+            />
+        <com.rey.material.widget.ImageView
+            android:layout_width="130dp"
+            android:layout_height="170dp"
+            android:id="@+id/cat_watches_img"
+            android:src="@drawable/watches"
+            />
+
+
+
+    </LinearLayout>
+<LinearLayout
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cat_linear_category_layout4"
+    android:orientation="horizontal"
+    android:layout_centerHorizontal="true"
+    android:gravity="center"
+    android:layout_marginTop="10dp"
+    android:layout_below="@+id/cat_linear_category_layout3"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    >
+    <com.rey.material.widget.ImageView
+        android:layout_width="130dp"
+        android:layout_height="170dp"
+        android:id="@+id/cat_tops_img"
+        android:src="@drawable/tops"
+        android:layout_marginStart="16dp"
+
+        />
+    <com.rey.material.widget.ImageView
+        android:layout_width="130dp"
+        android:layout_height="170dp"
+        android:id="@+id/cat_hats_img"
+        android:src="@drawable/hats"
+        />
+    <com.rey.material.widget.ImageView
+        android:layout_width="130dp"
+        android:layout_height="170dp"
+        android:id="@+id/cat_sports_img"
+        android:src="@drawable/sports"
+        />
+</LinearLayout>
+</RelativeLayout>

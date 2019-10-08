@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "702338699551",
+    "firebase_url": "https://styleomega-d4c99.firebaseio.com",
+    "project_id": "styleomega-d4c99",
+    "storage_bucket": "styleomega-d4c99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702338699551:android:4ddf8380207518e9",
+        "android_client_info": {
+          "package_name": "com.example.styleomega"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702338699551-n9ahe7ht3lnoipmv4ro1rltop4lqk107.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.styleomega",
+            "certificate_hash": "f665e65035ed91d43f72948f40289a20cd1f1034"
+          }
+        },
+        {
+          "client_id": "702338699551-hbfctsg4a84gc6lls99gov6qhs54a46d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUCU2gzttfUhgds1-W_OShCO-any-rD9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "702338699551-hbfctsg4a84gc6lls99gov6qhs54a46d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

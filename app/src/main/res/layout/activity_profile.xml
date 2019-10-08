@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ProfileActivity"
+    android:background="@android:color/black">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:id="@+id/appbar_profile"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Close"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/close_profile"
+
+                    >
+
+                </TextView>
+                <TextView
+                    android:id="@+id/update_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Update"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="10dp"
+
+                    >
+
+                </TextView>
+            </RelativeLayout>
+
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.rey.material.widget.ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:id="@+id/profile_profile_image"
+        android:src="@drawable/profile"
+        android:layout_below="@+id/appbar_profile"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        >
+
+    </com.rey.material.widget.ImageView>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/profile_name"
+    android:textSize="17sp"
+    android:textStyle="bold"
+    android:layout_marginRight="10dp"
+    android:layout_below="@+id/profile_profile_image"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="4dp"
+    android:textColor="@android:color/white"
+    android:text="Personal Profile"
+    >
+
+</TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_nameTag"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/profile_name"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"
+        android:text="Name"
+        android:layout_marginLeft="20dp"
+        >
+
+    </TextView>
+
+    <EditText
+        android:background="@drawable/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:id="@+id/profile_full_name"
+        android:layout_below="@+id/profile_nameTag"
+        android:layout_marginTop="5dp"
+        android:inputType="">
+
+
+
+    </EditText>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_emailTag"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/profile_full_name"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:text="Email"
+        android:layout_marginLeft="20dp"
+        >
+
+    </TextView>
+
+    <EditText
+        android:background="@drawable/buttons"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:id="@+id/profile_email"
+        android:layout_below="@+id/profile_emailTag"
+        android:layout_marginTop="5dp"
+        android:inputType="none">
+
+
+
+    </EditText>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_phoneTag"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/profile_email"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:text="Contact Number"
+        android:layout_marginLeft="20dp"
+        >
+
+    </TextView>
+
+    <EditText
+        android:background="@drawable/buttons"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:id="@+id/profile_contact"
+        android:layout_below="@+id/profile_phoneTag"
+        android:layout_marginTop="5dp"
+        android:inputType="none">
+
+
+
+    </EditText>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_unameTag"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/profile_contact"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:text="Username"
+        android:layout_marginLeft="20dp"
+        >
+
+    </TextView>
+
+    <EditText
+        android:background="@drawable/buttons"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:id="@+id/profile_uname"
+        android:layout_below="@+id/profile_unameTag"
+        android:layout_marginTop="5dp"
+        android:inputType="none">
+
+
+
+    </EditText>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_passwordTag"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/profile_uname"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:text="Password"
+        android:layout_marginLeft="20dp"
+
+        >
+
+    </TextView>
+
+    <EditText
+        android:background="@drawable/buttons"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:id="@+id/profile_password"
+        android:layout_below="@+id/profile_passwordTag"
+        android:layout_marginTop="5dp"
+        android:inputType="textPassword">
+
+    </EditText>
+</RelativeLayout>

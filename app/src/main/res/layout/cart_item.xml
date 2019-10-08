@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardElevation="20dp"
+    app:cardCornerRadius="15dp"
+    app:cardBackgroundColor="@android:color/black"
+
+    >
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        >
+<TextView
+    android:id="@+id/cartItem_productName"
+    android:layout_width="160dp"
+    android:layout_height="wrap_content"
+    android:text="Product Name "
+    android:textStyle="bold"
+    android:textSize="14dp"
+    android:layout_marginLeft="5dp"
+    android:textColor="@android:color/white"
+    >
+
+</TextView>
+        <TextView
+            android:id="@+id/cartItem_quantity"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Quantity :  "
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@android:color/white"
+            android:layout_alignParentEnd="true"
+            >
+
+        </TextView>
+        <TextView
+            android:id="@+id/cartItem_ProductPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Price :  "
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/cartItem_quantity"
+            android:gravity="center"
+
+            >
+
+        </TextView>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:text="Remove Item"
+            android:layout_below="@+id/cartItem_ProductPrice"
+            android:background="@color/colorPrimaryDark"
+            android:id="@+id/cart_removeButton"
+            >
+
+        </Button>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
