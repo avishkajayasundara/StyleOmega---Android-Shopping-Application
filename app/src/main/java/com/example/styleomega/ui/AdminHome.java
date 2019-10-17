@@ -198,22 +198,28 @@ Retrofit retrofit;
     }
 
     private void syncProducts() {
-       if(products.isEmpty()){
-           FancyToast.makeText(AdminHome.this,"The List is empty",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
+      try{
+          if(products==null){
+              FancyToast.makeText(AdminHome.this,"No products were found",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
 
-       }else
-           for(Product p : products){
+          }else
+              for(Product p : products){
+                  HashMap<String,Object> productData=new HashMap<>();
+                  productData.put("id",p.getId());
+                  productData.put("name",p.getName());
+                  productData.put("price",p.getPrice());
+                  productData.put("quantity",p.getQuantity());
+                  productData.put("description",p.getDescription());
+                  productData.put("category",p.getCategory());
+                  productData.put("rating",p.getRating());
+                  productRef.child(p.getId()).updateChildren(productData);
+              }
+          FancyToast.makeText(AdminHome.this,"Product database was updated",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
 
-               HashMap<String,Object> productData=new HashMap<>();
-               productData.put("id",p.getId());
-               productData.put("name",p.getName());
-               productData.put("price",p.getPrice());
-               productData.put("quantity",p.getQuantity());
-               productData.put("description",p.getDescription());
-               productData.put("category",p.getCategory());
-               productData.put("rating",p.getRating());
-               productRef.child(p.getId()).updateChildren(productData);
-           }
+      }catch (Exception e){
+          FancyToast.makeText(AdminHome.this,"Application could not connect to the API",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
+
+      }
     }
 
 

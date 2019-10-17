@@ -25,6 +25,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rey.material.widget.CheckBox;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.util.List;
 
@@ -89,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
     private void AuthenticateAccount(final String username, final String password) {
         List<Customer> customers=Customer.findWithQuery(Customer.class,"Select * from Customer where username =?",username);
         if(customers.isEmpty()){
-            Toast.makeText(LoginActivity.this,"The username does not exist...",Toast.LENGTH_SHORT).show();
+            FancyToast.makeText(LoginActivity.this,"The username does not exist.",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
         }
         else{
             for(Customer c:customers){
@@ -104,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                     mEditor.apply();
                     break;
                 }else{
-                    Toast.makeText(LoginActivity.this,"The password has been changed...",Toast.LENGTH_SHORT).show();
+                    FancyToast.makeText(LoginActivity.this,"Invalid password.",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
 
                 }
             }

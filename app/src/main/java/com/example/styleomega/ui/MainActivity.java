@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.styleomega.Model.Customer;
 import com.example.styleomega.Prevalent.Prevalent;
 import com.example.styleomega.R;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 
 import java.util.List;
@@ -62,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         if(uname!=""&&pwd!=""){
             if(!TextUtils.isEmpty(uname)&&!TextUtils.isEmpty(pwd)){
                 AllowAccess(uname,pwd);
-                Toast.makeText(MainActivity.this,"Already Logged in",Toast.LENGTH_SHORT).show();
 
             }
         }
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     private void AllowAccess(final String username,final String password) {
         List<Customer> customers=Customer.findWithQuery(Customer.class,"Select * from Customer where username =? and password=?",username,password);
         if(!customers.isEmpty()){
-            Toast.makeText(MainActivity.this,"Welcome Back...",Toast.LENGTH_SHORT).show();
+            FancyToast.makeText(MainActivity.this,"Welcome back !",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
             Intent intent=new Intent(MainActivity.this, HomeActivity.class);
             mEditor.putString("uname",username);
             mEditor.apply();

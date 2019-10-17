@@ -45,9 +45,9 @@ public class MyOrders extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        reference= FirebaseDatabase.getInstance().getReference().child("Orders");
+        reference= FirebaseDatabase.getInstance().getReference().child("Orders").child(username);
         FirebaseRecyclerOptions<Order> options=new FirebaseRecyclerOptions.Builder<Order>()
-                .setQuery(reference.orderByChild(username),Order.class)
+                .setQuery(reference,Order.class)
                 .build();
         adapter=new FirebaseRecyclerAdapter<Order, CartViewHolder>(options) {
             @Override

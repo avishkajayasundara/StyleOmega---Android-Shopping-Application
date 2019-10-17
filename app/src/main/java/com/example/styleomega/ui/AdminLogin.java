@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.styleomega.R;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import io.paperdb.Paper;
 
@@ -35,8 +36,10 @@ String username,password;
                 if(username.equals("admin")&&password.equals("admin")){
                     Intent intent=new Intent(AdminLogin.this, AdminHome.class);
                     startActivity(intent);
+                    FancyToast.makeText(AdminLogin.this,"Login was successful.",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+
                 }else
-                    Toast.makeText(AdminLogin.this,"Invalid Credentials...",Toast.LENGTH_SHORT).show();
+                    FancyToast.makeText(AdminLogin.this,"Invalid Credentials.",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
 
             }
         });

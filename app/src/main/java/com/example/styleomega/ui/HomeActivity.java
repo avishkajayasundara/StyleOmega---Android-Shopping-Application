@@ -33,6 +33,7 @@ import com.google.android.material.navigation.NavigationView.OnNavigationItemSel
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.shashank.sony.fancytoastlib.FancyToast;
 import com.squareup.picasso.Picasso;
 
 import io.paperdb.Paper;
@@ -134,6 +135,7 @@ Product p;
                         Intent intent=new Intent(HomeActivity.this,ProductDetailsActivity.class);
                         intent.putExtra("id",model.getId());
                         startActivity(intent);
+
                     }
                 });
             }
@@ -213,6 +215,8 @@ Product p;
                Paper.book().destroy();
                Intent intent=new Intent(HomeActivity.this,MainActivity.class);
                startActivity(intent);
+               FancyToast.makeText(HomeActivity.this,"Successfully logged out",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+
                break;
            }
            case R.id.search:{

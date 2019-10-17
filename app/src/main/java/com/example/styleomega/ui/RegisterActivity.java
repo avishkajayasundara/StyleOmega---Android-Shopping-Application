@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.styleomega.Model.Customer;
 import com.example.styleomega.R;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.util.List;
 
@@ -56,20 +57,21 @@ public class RegisterActivity extends AppCompatActivity {
 
         List<Customer> customers=Customer.findWithQuery(Customer.class,"Select * from Customer where username =?",uname);
         if(!customers.isEmpty()){
-            Toast.makeText(RegisterActivity.this,"The Username already exists...",Toast.LENGTH_SHORT).show();
+            FancyToast.makeText(RegisterActivity.this,"The username is already taken",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
 
         }else{
             customers=Customer.findWithQuery(Customer.class,"Select * from Customer where email =?",_email);
             if(!customers.isEmpty()){
-                Toast.makeText(RegisterActivity.this,"You have already registered.Please Login...",Toast.LENGTH_SHORT).show();
+                FancyToast.makeText(RegisterActivity.this,"You have already registered. Please login",FancyToast.LENGTH_LONG,FancyToast.CONFUSING,true).show();
                 Intent intent=new Intent(RegisterActivity.this, MainActivity.class);
                 startActivity(intent);
             }else{
                 Customer customer=new Customer( firstName,  lastName,  email,  contact,  username,  password);
                 customer.save();
-                Toast.makeText(RegisterActivity.this,"You have registered Successfully.Please Login...",Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
+                FancyToast.makeText(RegisterActivity.this,"Registration was successful",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+
             }
         }
     }

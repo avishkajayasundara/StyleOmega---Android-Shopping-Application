@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.styleomega.Model.Customer;
 import com.example.styleomega.R;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -65,6 +66,8 @@ public class ProfileActivity extends AppCompatActivity {
                     updateClicked=false;
                     Intent intent=new Intent(ProfileActivity.this,HomeActivity.class);
                     startActivity(intent);
+                    FancyToast.makeText(ProfileActivity.this,"Your profile has been updated",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+
 
 
                 }

@@ -3,9 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.styleomega">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:usesCleartextTraffic="true"
         android:name="com.orm.SugarApp"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
@@ -13,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:node="merge">
-        <activity android:name=".ui.MyOrders"></activity>
+        <activity android:name=".ui.Thankyou"></activity>
+        <activity android:name=".ui.MyOrders" />
         <activity android:name=".ui.CategorySearch" />
         <activity android:name=".ui.SearchedProducts" />
         <activity android:name=".ui.ContactPage" />
@@ -52,7 +52,8 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="com.example.styleomega" />
     </application>
-
     <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

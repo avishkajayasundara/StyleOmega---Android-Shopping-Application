@@ -8,7 +8,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface Api {
-    String BASE_URL="http://10.3.4.193:8084/WebApi/";
+    String BASE_URL="http://192.168.1.6:8084/WebApi/";
     @GET("products")
     Call<List<Product>> getProducts();
 }

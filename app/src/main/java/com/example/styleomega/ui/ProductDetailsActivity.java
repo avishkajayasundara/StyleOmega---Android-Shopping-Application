@@ -24,12 +24,13 @@ import com.google.firebase.database.ValueEventListener;
 import com.rey.material.widget.Button;
 import com.rey.material.widget.FloatingActionButton;
 import com.rey.material.widget.ImageView;
+import com.shashank.sony.fancytoastlib.FancyToast;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
 public class ProductDetailsActivity extends AppCompatActivity {
-
+    boolean canOrder=true;
     android.widget.Button add;
     private FloatingActionButton share;
     Product product;
@@ -93,10 +94,15 @@ public class ProductDetailsActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addToCart();
-                ShoppingCart.orderedProducts.add(product);
-                Toast.makeText(ProductDetailsActivity.this,"Item was added to the cart",Toast.LENGTH_SHORT).show();
+                if(canOrder){
+                    addToCart();
+                    ShoppingCart.orderedProducts.add(product);
+                    FancyToast.makeText(ProductDetailsActivity.this,"Item was added to the cart",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
 
+                }else{
+                    FancyToast.makeText(ProductDetailsActivity.this,"This item is out of stock",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
+
+                }
 
             }
         });
@@ -152,6 +158,9 @@ public class ProductDetailsActivity extends AppCompatActivity {
                 total=product.getPrice();
                 price=product.getPrice();
                 totalPrice.setText(" Rs."+total);
+                if(product.getQuantity()==0){
+                    canOrder=false;
+                }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

@@ -24,7 +24,7 @@ import com.shashank.sony.fancytoastlib.FancyToast;
 import com.squareup.picasso.Picasso;
 
 public class SearchedProducts extends AppCompatActivity {
-
+    int  count;
     EditText searchInput;
     FloatingActionButton searchButton;
     RecyclerView searchList;
@@ -32,6 +32,7 @@ public class SearchedProducts extends AppCompatActivity {
     DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        count=0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searched_products);
         searchButton=findViewById(R.id.search_searchProducts);
@@ -63,6 +64,7 @@ public class SearchedProducts extends AppCompatActivity {
             FirebaseRecyclerAdapter<Product, ProductViewHolder> adapter=new FirebaseRecyclerAdapter<Product, ProductViewHolder>(options) {
                 @Override
                 protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Product model) {
+                    count++;
                     holder.productNameText.setText(model.getName());
                     holder.descriptionText.setText(model.getDescription());
                     holder.priceText.setText("Rs."+model.getPrice());
@@ -89,6 +91,11 @@ public class SearchedProducts extends AppCompatActivity {
             };
             searchList.setAdapter(adapter);
             adapter.startListening();
+            if(count==0){
+                FancyToast.makeText(SearchedProducts.this,"No products were found",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
+
+            }
+
         }
 
     }

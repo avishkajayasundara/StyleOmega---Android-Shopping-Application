@@ -78,7 +78,7 @@ public class ConfirmOrder extends AppCompatActivity {
                 }
                 if(validateFields()){
                     conirmOrder();
-                    Intent intent=new Intent(ConfirmOrder.this,HomeActivity.class);
+                    Intent intent=new Intent(ConfirmOrder.this,Thankyou.class);
                     startActivity(intent);
                    // FancyToast.makeText(ConfirmOrder.this,"Your Order has been confirmed.",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
                 }else{
@@ -100,15 +100,15 @@ public class ConfirmOrder extends AppCompatActivity {
             orderList.put("productId",c.getProductId());
             orderList.put("name",c.getName());
             orderList.put("price",c.getPrice());
-            orderList.put("quantity",c);
-            orderListRef.child(orderID).child(username).child(c.getProductId()).updateChildren(orderList);
+            orderList.put("quantity",c.getQuantity());
+            orderListRef.child(username).child(c.getProductId()).updateChildren(orderList);
         }
         orderListRef=FirebaseDatabase.getInstance().getReference().child("Cart List").child("User View");
         orderListRef.child(username)
                 .removeValue();
         updateDatabase();
         ShoppingCart.cartItems.clear();
-        FancyToast.makeText(ConfirmOrder.this,"Thank you! Your order will be delivered within 3 business days..",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+        FancyToast.makeText(ConfirmOrder.this,"Your order will be delivered within 3 business days..",FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
 
 
 
@@ -131,10 +131,13 @@ public class ConfirmOrder extends AppCompatActivity {
             productData.put("description",p.getDescription());
             productData.put("imageUrl",p.getImageUrl());
             productData.put("category",p.getCategory());
-            productData.put("rating",0);
+            productData.put("rating",5);
 
             productRef.child(p.getId()).updateChildren(productData);
+
         }
+        ShoppingCart.orderedProducts.clear();
+        ShoppingCart.cartItems.clear();
     }
 
     private boolean validateFields() {

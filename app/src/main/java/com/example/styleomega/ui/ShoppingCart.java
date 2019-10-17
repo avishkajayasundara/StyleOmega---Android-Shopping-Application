@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCart extends AppCompatActivity {
+    int count;
     private SharedPreferences shared;
     private String username;
     public static List<Cart> cartItems=new ArrayList<Cart>();
@@ -42,6 +43,7 @@ public class ShoppingCart extends AppCompatActivity {
     FirebaseRecyclerAdapter<Cart,CartViewHolder> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        count=0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_cart);
         recyclerView=findViewById(R.id.cart_recycler);
@@ -52,7 +54,6 @@ public class ShoppingCart extends AppCompatActivity {
         shippingText=findViewById(R.id.shipping_price);
         subtotalText=findViewById(R.id.subTotal);
         topTotalText=findViewById(R.id.cartTotal);
-
         shared = getSharedPreferences("shared", Context.MODE_PRIVATE);
         username=shared.getString("uname","");
         placeOrder.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +61,6 @@ public class ShoppingCart extends AppCompatActivity {
             public void onClick(View view) {
                if(cartItems.isEmpty()){
                    FancyToast.makeText(ShoppingCart.this,"Your cart is empty.",FancyToast.LENGTH_LONG,FancyToast.WARNING,true).show();
-
                }else{
                    Intent intent=new Intent(ShoppingCart.this,ConfirmOrder.class);
                    intent.putExtra("total",total);
@@ -82,6 +82,7 @@ public class ShoppingCart extends AppCompatActivity {
           adapter=new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
              @Override
              protected void onBindViewHolder(@NonNull CartViewHolder holder, final int position, @NonNull final Cart model) {
+                 count++;
                 holder.productNameText.setText(model.getName());
                 holder.priceTxt.setText("Product Price : Rs."+model.getPrice());
                 holder.quantityText.setText("Quantity : "+model.getQuantity());
@@ -142,9 +143,7 @@ public class ShoppingCart extends AppCompatActivity {
                          builder.show();
                      }
                  });
-
-             }
-
+           }
              @NonNull
              @Override
              public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -155,7 +154,9 @@ public class ShoppingCart extends AppCompatActivity {
          };
          recyclerView.setAdapter(adapter);
         adapter.startListening();
-
+        if (count == 0) {
+            FancyToast.makeText(ShoppingCart.this,"Cart is empty",FancyToast.LENGTH_LONG,FancyToast.ERROR,true).show();
+        }
     }
     public void calcTotal(){
         totalOfItems=0;
